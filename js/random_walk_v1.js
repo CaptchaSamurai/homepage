@@ -24,7 +24,7 @@ function startTimer(duration, display) {
 }
 
 window.onload = function () {
-    var minutes = 2 //minMinutes + 60 * Math.floor(Math.random() * 21),
+    var minutes = minMinutes + 60 * Math.floor(Math.random() * 21),
         display = document.querySelector('#time');
     startTimer(minutes, display);
 };
