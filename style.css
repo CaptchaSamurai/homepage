@@ -1,11 +1,14 @@
-html body {
-  background-color: #ffffff;
-  }
+
 *
 {color: #444;
   max-width: 650px;
   margin: 20px auto;
 }
+
+html body {
+  background-color: #ffffff;
+  }
+
 p
 {font-size: 18px;
   line-height: 1.6;
