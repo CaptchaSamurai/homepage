@@ -101,6 +101,8 @@ p.subtitle {
     line-height: 1;
 }
 
+.sub { position: relative; top: 0.8ex; font-size: 66%; }
+
 .numeral {
     font-family: et-book-roman-old-style;
 }
