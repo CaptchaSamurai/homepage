@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Shooting lasers in taxicab space</title>
+    <link rel="stylesheet" href="../tufte.css"/>
+    <link rel="stylesheet" href="../latex.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <article>
+        <section>
+            <h1 id="shooting lasers in taxicab space">Shooting lasers in taxicab space</h1>
+            <p class="subtitle">Kamil Przespolewski</p>
+        </section>
+
+        <section>
+            <p>How does the circle look in the taxicab metric space? Thus far the only answer I’ve heard is “It looks like a square.”</p>
+            <p>Why does nobody seem to take this question literally? I mean, how a taxicab circle would look like for beings living there? To answer this I have set up the mission to build a pinhole camera and record how the circle is projected onto it.</p>            
+            <p>First, a quick reminder. A circle is a collection of points equidistant from a center. In taxicab metric space when we graph them they form a square. If you are not feeling comfortable with this, check out <a href="https://docs.google.com/document/d/e/2PACX-1vTQ7F1w8QO0A-fLzQth7PPrzK6o-TRYmtkDpJeVC6ViK-coBbzyPcF2dDLgXu-rX3iTWTYIMIRtPg_8/pub">What is a distance?</a></p>
+            <figure>
+                <label for="mn-exports-imports" class="margin-toggle">&#8853;</label><input type="checkbox" id="mn-exports-imports" class="margin-toggle"/><span class="marginnote">Taxicab circle with radius length of 3 units. Three example lines are drawn, both have length 3. To calculate length between point A = (x₁, y₁) and B = (x₂, y₂) in taxicab we sum their “shadows” (white lines on a picture above). Distance(A, B) = |x₁ - x₂| + |y₁ , y₂|. In 3D we simply add "z" coordinate.</span>
+                <img src="../images/shooting_lasers/taxicab_basic_circle_v2.png" alt="Taaxicab circle" />
+            </figure>
+            <p>Pinhole camera works in a straightforward way.</p>
+            <figure class="fullwidth">
+                <img src="../images/shooting_lasers/pinhole_v2.png" alt="Figurative map of the successive losses of the French Army in the Russian campaign, 1812-1813" />
+            </figure>
+            <p>Without a hole (a) light ray from a point located on an object spreads on a whole page. No image is created. By putting a wall with a pinhole between an object and image plane (b) we can relate a single point on a object with a single point on a image plane. If we cut off light coming from all other areas, we would see an upside down projection of what is in front of the hole. Now the question is: what will this technique produce inside the taxicab world?</p>
+            
+            <p><label for="mn-figure-1" class="margin-toggle">&#8853;</label><input type="checkbox" id="mn-figure-1" class="margin-toggle"/><span class="marginnote"><img src="../images/shooting_lasers/cuboid_v2.gif" alt="Taxicab cuboid"/>We've just definded taxicab light rays from A to B, yay!</span>
+            <p>Before we do projection we have to define what a taxicab light ray is. This is an arbitrary endeavor, but I think you will agree, that taxicab light rays should be similar to classical light rays. What do we know about classical light rays? They travel via the shortest path. In the euclidean world, the shortest path is unique. However, in the taxicab metric space, there are many shortest paths from A to B (in most cases). Thus I propose to define taxicab light rays from A to B as all shortest paths from A to B. In 2D they will fit in a rectangle, and in 3D they fit in a cuboid.</p>
+
+            <p>How many light rays fit in a cuboid? Are they uniformly spread? How does intensity change when a cuboid grows? These are good questions, but let's start simply: assume that the cuboid is uniformly illuminated and intensity is constant.</p>
+            
+        </section>
+        <section>
+            <h2 id="simple setup">Simple set up</h2>
+            <p>In such a case, what happens when you shoot a laser? It depends where you stand and where you are pointing at! If you point a laser in parallel to one of the axes, the laser behaves as always. But point it to a slightly different point and an illuminated line grows to a rectangle/cuboid. This is quite funny. Taxicab beings could say where the lines are parallel to the axes – something impossible in our world. They could debunk statements like “I am the center of the universe, and axes rotate with me”.</p>
+        
+            <p>Okay, enough lasers. Let’s go back to the main question: How do projections look like?</p>
+
+            <figure class="fullwidth">
+                <img src="../images/shooting_lasers/taxi_2D_projection_v1.png" alt="empty"/>
+            </figure>
+
+            <p>In 2D taxicab shortest paths from A to B fit in a rectangle (a). Now limit light rays by a wall with a pinhole (b). This is equivalent to checking what are the shortest paths from A to pinhole and from pinhole to B. Put the image plane (c). Light from a single point is spread equally on half of the image plane’s length.</p>
+
+            <p>All the light which passes through a pinhole spreads anyway. This is a similar situation to one in the euclidean world, in which there is no pinhole. We could think a bit more about what would happen with multiple points and multiple intensities with mixing. I bet that we wouldn’t get more than gradients. If this is true, current assumptions lead to the conclusion, that the taxicab circle looks like anything else!</p>
+
+            
+            </section>
+            <section>
+            <h2 id="summary">Density</h2>
+            <p><label for="mn-figure-1" class="margin-toggle">&#8853;</label><input type="checkbox" id="mn-figure-1" class="margin-toggle"/><span class="marginnote"><img src="../images/shooting_lasers/taxi_discrete_ball_emit_v1.gif" alt=""/></span>    
+            <p>Maybe we should tweak our assumption about uniformly illuminated cuboids. Why? Take a 2D taxicab metric space with integers (instead of reals, as previously). It basically means that we have “jumps” and, by hand, we can calculate how many paths light could take from A to B. Take some point, call it A. Emit light from it. After some time light traveled three units.</p>
+
+            <figure>
+                <label for="mn-exports-imports" class="margin-toggle">&#8853;</label><input type="checkbox" id="mn-exports-imports" class="margin-toggle"/><span class="marginnote">Point emits light in taxicab world (on integeres).</span>
+                <img src="../images/shooting_lasers/ways_v3.png" alt="empty" />
+            </figure>
+
+            <p><span class="marginnote">
+                By the way, <a href="https://en.wikipedia.org/wiki/Pascal%27s_triangle">the Pascal triangle</a> is hiding here. 
+            </span></p>
+            <p>Eventhough distances (A to B, and A to C) are equal, there are three ways to get from A to B, but only one from A to C.</p>
+
+            <p>We can illustrate it further in 3D with the bigger ball with light rays picked at random. Here 400 random light rays in the taxicab ball form a pattern.</p>
+            
+
+            <p><label for="mn-figure-1" class="margin-toggle">&#8853;</label><input type="checkbox" id="mn-figure-1" class="margin-toggle"/><span class="marginnote"><img src="../images/shooting_lasers/gifs_raw/EmitEuclidLight_v1/emitPathsEuclidBall_v1_191.png" alt="empty"/>This is in contrast to the euclidean ball, where random light rays spread uniformly.</span></p>
+            <figure>
+                <label for="mn-exports-imports" class="margin-toggle">&#8853;</label><input type="checkbox" id="mn-exports-imports" class="margin-toggle"/>
+                <img src="../images/shooting_lasers/emit_taxi_v3.gif" alt="empty"/>
+            </figure>
+
+            <p>I like that! Let’s see how projections work in this case.</p>
+
+            <figure>
+                <img src="../images/shooting_lasers/2D_taxi_ball_A_text_v1.png" alt="empty"/>
+            </figure>
+
+            <p>From each point (in the lower part, since it only affects projection) emit two random light rays.</p>
+
+            <figure>
+                <img src="../images/shooting_lasers/2D_taxi_ball_B_v1.png" alt="empty"/>
+            </figure>
+
+            <p>None of them passed through a point! Note that a circle is quite close to the pinhole. In the euclidean world, its projection would be gigantic. Moreover in this particular case the taxicab circle does not look like it at all, because there is no image projected on an image plane! Since most of the randomly sampled rays go sideways, moving the circle closer to the pinhole won’t help at all. But shifting it sideways will.</p>
+
+            <figure>
+                <img src="../images/shooting_lasers/2D_taxi_ball_SHIFT_B_v1.png" alt="empty"/>
+            </figure>
+
+            <p>Only a single light ray touches the image plane! We could emit more random light rays, but even that wouldn’t help to extract more information. This is because all light rays after passing through go left/down (50/50 chance) or right/down. If we shifted the circle even more to the right, or picked a different shape, in a way so one light ray would pass through a pinhole, the projection wouldn’t change more than it could change by repeating our simulation. If taxicab beings had eyes they would probably be pretty useless. Probably there is a method they could evolve to extract more information, but it would perhaps involve sampling from different perspectives (maybe walking and touching would be more effective).</p>
+
+            <p>What happens when we try to go from discrete (integers) back to the smooth (reals) world? I don’t know yet. But it seems that there are multiple valid methods that give different answers to this question (like in Bertrand's Paradox). So thus far the question is open, feel free to hmu.</p>
+        </section>
+
+        <section>
+            <h2 id="summary">Summary</h2>
+            <p>We saw how a popular phrase, “a circle in a taxicab looks like a square”, can be answered differently. We haven’t discovered anything great, but, for me, it was fun anyways. It leads us naturally to combinatorial problems and issues with randomness, which I will definitely check in coming months. The exercise of imagining oneself inside mathematical abstractions is one of the strategies used to  better. I forgot who teched me this, but I have been reminded of it recently by <a href="https://www.youtube.com/watch?v=Py4aFsJzChI">Jordan Ellenberg</a> who mentioned exercise in one of Thurston’s books.</p>
+            
+            <figure>
+                <img src="../images/shooting_lasers/thurston_v1.png" alt="empty"/>
+            </figure>
+        </section>
+
+    </article>
+  </body>
+</html>
