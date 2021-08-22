@@ -7,36 +7,45 @@
     <link rel="stylesheet" href="../latex.css"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
+
   <body>
     <article>
         <section>
             <h1 id="shooting lasers in taxicab space">Shooting lasers in taxicab space</h1>
+            
             <p class="subtitle">Kamil Przespolewski</p>
+            <p><span class="marginnote">
+                Target audience: everyone who is comfortable with a notion of distance.
+                <br> If you aren't – don't worry. It's a very intuitive topic, which you can learn in less than 15 minutes without any background in math beyond adding and multiplying. Idk why it's only thaught on university level. Anyways, check out <a href="https://docs.google.com/document/d/e/2PACX-1vTQ7F1w8QO0A-fLzQth7PPrzK6o-TRYmtkDpJeVC6ViK-coBbzyPcF2dDLgXu-rX3iTWTYIMIRtPg_8/pub">What is a distance?</a> See you!
+            </span></p>
         </section>
 
         <section>
             <p>How does the circle look in the taxicab metric space? Thus far the only answer I’ve heard is “It looks like a square.”</p>
             <p>Why does nobody seem to take this question literally? I mean, how a taxicab circle would look like for beings living there? To answer this I have set up the mission to build a pinhole camera and record how the circle is projected onto it.</p>            
-            <p>First, a quick reminder. A circle is a collection of points equidistant from a center. In taxicab metric space when we graph them they form a square. If you are not feeling comfortable with this, check out <a href="https://docs.google.com/document/d/e/2PACX-1vTQ7F1w8QO0A-fLzQth7PPrzK6o-TRYmtkDpJeVC6ViK-coBbzyPcF2dDLgXu-rX3iTWTYIMIRtPg_8/pub">What is a distance?</a></p>
+            <p>First, a quick reminder. A ball is a collection of points equidistant from a center. In taxicab metric space when we graph those points they form a square. If you are not feeling comfortable with this, check out <a href="https://docs.google.com/document/d/e/2PACX-1vTQ7F1w8QO0A-fLzQth7PPrzK6o-TRYmtkDpJeVC6ViK-coBbzyPcF2dDLgXu-rX3iTWTYIMIRtPg_8/pub">What is a distance?</a></p>
             <figure>
-                <label for="mn-exports-imports" class="margin-toggle">&#8853;</label><input type="checkbox" id="mn-exports-imports" class="margin-toggle"/><span class="marginnote">Taxicab circle with radius length of 3 units. Three example lines are drawn, both have length 3. To calculate length between point A = (x₁, y₁) and B = (x₂, y₂) in taxicab we sum their “shadows” (white lines on a picture above). Distance(A, B) = |x₁ - x₂| + |y₁ , y₂|. In 3D we simply add "z" coordinate.</span>
-                <img src="../images/shooting_lasers/taxicab_basic_circle_v2.png" alt="Taaxicab circle" />
+                <label for="mn-exports-imports" class="margin-toggle">&#8853;</label><input type="checkbox" id="mn-exports-imports" class="margin-toggle"/><span class="marginnote">Taxicab circle with radius length of 3 units. Inside are three lines. All have length 3. To calculate length between point A = (x₁, y₁) and B = (x₂, y₂) in taxicab we sum their “shadows” (white lines on a picture above). In symbols: <br>Distance(A, B) = |x₁ - x₂| + |y₁ , y₂|.<br>In 3D we simply add "z" coordinate.</span>
+                <img src="../images/shooting_lasers/taxicab_basic_circle_v2.png" alt="Taxicab circle" />
             </figure>
             <p>Pinhole camera works in a straightforward way.</p>
             <figure class="fullwidth">
-                <img src="../images/shooting_lasers/pinhole_v2.png" alt="Figurative map of the successive losses of the French Army in the Russian campaign, 1812-1813" />
+                <img src="../images/shooting_lasers/pinhole_v2.png" alt="empty" />
             </figure>
-            <p>Without a hole (a) light ray from a point located on an object spreads on a whole page. No image is created. By putting a wall with a pinhole between an object and image plane (b) we can relate a single point on a object with a single point on a image plane. If we cut off light coming from all other areas, we would see an upside down projection of what is in front of the hole. Now the question is: what will this technique produce inside the taxicab world?</p>
+            <p>Without a hole (a) light ray from a point located on an object spreads on a whole page. No image is created. By putting a wall with a pinhole between an object and image plane (b) we can relate a single point on a object with a single point on a image plane. If we'd cut off light coming from all other areas, we'd see an upside down projection of what is in front of the hole. Now the question is: what will this technique produce inside the taxicab world?</p>
             
-            <p><label for="mn-figure-1" class="margin-toggle">&#8853;</label><input type="checkbox" id="mn-figure-1" class="margin-toggle"/><span class="marginnote"><img src="../images/shooting_lasers/cuboid_v2.gif" alt="Taxicab cuboid"/>We've just definded taxicab light rays from A to B, yay!</span>
-            <p>Before we do projection we have to define what a taxicab light ray is. This is an arbitrary endeavor, but I think you will agree, that taxicab light rays should be similar to classical light rays. What do we know about classical light rays? They travel via the shortest path. In the euclidean world, the shortest path is unique. However, in the taxicab metric space, there are many shortest paths from A to B (in most cases). Thus I propose to define taxicab light rays from A to B as all shortest paths from A to B. In 2D they will fit in a rectangle, and in 3D they fit in a cuboid.</p>
+        </section>
+        <section>
+            <h2 id="defining a light ray">Defining a light ray</h2>
+            <p><label for="mn-figure-1" class="margin-toggle">&#8853;</label><input type="checkbox" id="mn-figure-1" class="margin-toggle"/><span class="marginnote"><img src="../images/shooting_lasers/cuboid_v2.gif" alt="Taxicab cuboid"/>We've just definded taxicab light rays from A to B as all the shortest paths inside this box, yay!</span>
+            <p>What a taxicab light ray is? I think you will agree, that taxicab light ray should be similar to classical light ray. What do we know about them? They travel via the shortest path. In the euclidean world, the shortest path is unique. However, in the taxicab metric space, there are many shortest paths from A to B (in most cases). Thus I propose to define taxicab light rays from A to B as the set of all of the shortest paths from A to B. In 2D they will fit in a rectangle, and in 3D they fit in a cuboid.</p>
 
             <p>How many light rays fit in a cuboid? Are they uniformly spread? How does intensity change when a cuboid grows? These are good questions, but let's start simply: assume that the cuboid is uniformly illuminated and intensity is constant.</p>
             
         </section>
         <section>
             <h2 id="simple setup">Simple set up</h2>
-            <p>In such a case, what happens when you shoot a laser? It depends where you stand and where you are pointing at! If you point a laser in parallel to one of the axes, the laser behaves as always. But point it to a slightly different point and an illuminated line grows to a rectangle/cuboid. This is quite funny. Taxicab beings could say where the lines are parallel to the axes – something impossible in our world. They could debunk statements like “I am the center of the universe, and axes rotate with me”.</p>
+            <p>In such a case, what happens when you shoot a laser? It depends where you stand and where you are pointing at! If you point a laser in parallel to one of the axes, the laser behaves in a way we are used to. But point it to a slightly different point and an illuminated line grows to a rectangle/cuboid. This is quite funny. Taxicab beings could say where the lines are parallel to the axes – something impossible in our world. They could debunk statements like “I am the center of the universe, and axes rotate with me”.</p>
         
             <p>Okay, enough lasers. Let’s go back to the main question: How do projections look like?</p>
 
@@ -67,11 +76,10 @@
 
             <p>We can illustrate it further in 3D with the bigger ball with light rays picked at random. Here 400 random light rays in the taxicab ball form a pattern.</p>
             
-
-            <p><label for="mn-figure-1" class="margin-toggle">&#8853;</label><input type="checkbox" id="mn-figure-1" class="margin-toggle"/><span class="marginnote"><img src="../images/shooting_lasers/gifs_raw/EmitEuclidLight_v1/emitPathsEuclidBall_v1_191.png" alt="empty"/>This is in contrast to the euclidean ball, where random light rays spread uniformly.</span></p>
+            <p><label for="mn-figure-1" class="margin-toggle">&#8853;</label><input type="checkbox" id="mn-figure-1" class="margin-toggle"/><span class="marginnote"><img src="../images/shooting_lasers/euclidean_ball_v2.png" alt="empty"/>This is in contrast to the euclidean ball, where random light rays spread uniformly.</span></p>
             <figure>
                 <label for="mn-exports-imports" class="margin-toggle">&#8853;</label><input type="checkbox" id="mn-exports-imports" class="margin-toggle"/>
-                <img src="../images/shooting_lasers/emit_taxi_v3.gif" alt="empty"/>
+                <img src="../images/shooting_lasers/emit_taxi_v6.gif" alt="empty"/>
             </figure>
 
             <p>I like that! Let’s see how projections work in this case.</p>
@@ -94,18 +102,19 @@
 
             <p>Only a single light ray touches the image plane! We could emit more random light rays, but even that wouldn’t help to extract more information. This is because all light rays after passing through go left/down (50/50 chance) or right/down. If we shifted the circle even more to the right, or picked a different shape, in a way so one light ray would pass through a pinhole, the projection wouldn’t change more than it could change by repeating our simulation. If taxicab beings had eyes they would probably be pretty useless. Probably there is a method they could evolve to extract more information, but it would perhaps involve sampling from different perspectives (maybe walking and touching would be more effective).</p>
 
-            <p>What happens when we try to go from discrete (integers) back to the smooth (reals) world? I don’t know yet. But it seems that there are multiple valid methods that give different answers to this question (like in Bertrand's Paradox). So thus far the question is open, feel free to hmu.</p>
+            <p>What happens when we try to go from discrete (integers) back to the smooth (reals) world? I don’t know yet. But it seems that there are multiple valid methods that give different answers to this question (like in <a href="https://en.wikipedia.org/wiki/Bertrand_paradox_(probability)">the Bertrand's Paradox</a>). So thus far the question is open, feel free to hmu.</p>
         </section>
 
         <section>
             <h2 id="summary">Summary</h2>
-            <p>We saw how a popular phrase, “a circle in a taxicab looks like a square”, can be answered differently. We haven’t discovered anything great, but, for me, it was fun anyways. It leads us naturally to combinatorial problems and issues with randomness, which I will definitely check in coming months. The exercise of imagining oneself inside mathematical abstractions is one of the strategies used to  better. I forgot who teched me this, but I have been reminded of it recently by <a href="https://www.youtube.com/watch?v=Py4aFsJzChI">Jordan Ellenberg</a> who mentioned exercise in one of Thurston’s books.</p>
+            <p>We've seen how a popular phrase, “a circle in a taxicab looks like a square”, can be answered differently. We haven’t discovered anything great, but, for me, it was fun anyways. It led us naturally to combinatorial problems and issues with randomness, which I will definitely check in coming months. The exercise of imagining oneself inside mathematical abstractions is one of standard ways to form intuitions. I forgot who teched me this, but I have been reminded of it recently by <a href="https://www.youtube.com/watch?v=Py4aFsJzChI">Jordan Ellenberg</a> who mentioned exercise in one of Thurston’s books.</p>
             
             <figure>
                 <img src="../images/shooting_lasers/thurston_v1.png" alt="empty"/>
             </figure>
         </section>
-
     </article>
+
+    <a href="../index.html">&lt;&lt;<font size="+1"> back to the homepage</font></a> 
   </body>
 </html>
